@@ -10,3 +10,4 @@
 /TemplateApi/obj
 *.user
 /src/Api/bin/Debug/net7.0
+/src/TemplateApi/bin/Debug/net7.0

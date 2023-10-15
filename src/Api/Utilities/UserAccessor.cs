@@ -1,4 +1,4 @@
-﻿using Application.Interfaces;
+﻿
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Api.Utilities
 {
-    public class UserAccessor : IUserAccessor
+    public class UserAccessor 
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 

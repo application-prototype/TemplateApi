@@ -1,4 +1,4 @@
-﻿using Application.Commands;
+﻿
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -9,8 +9,8 @@ namespace Api
 {
     [ApiVersion("1")]
     [ApiController]
-    [Route("api/workitem")]
-    //[Route("[controller]")]
+    //[Route("api/workitem")]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     public class WorkItemsController : BaseController
     {
@@ -19,19 +19,19 @@ namespace Api
 
         }
 
-        [HttpPost("request")]
-        [ProducesDefaultResponseType]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [SwaggerOperation(
-            "Returns a collection of a work item's attachments.",
-            Tags = new[] { "3. Work Item Attachments" },
-            OperationId = "GetManyWorkItemAttachments")]
-        public async Task<ActionResult> Post([FromBody] CreateWorkItemCommand command)
-        {
-            return CreatedAtAction("", new { }, null);
-        }
+        //[HttpPost("request")]
+        //[ProducesDefaultResponseType]
+        //[ProducesResponseType(StatusCodes.Status204NoContent)]
+        //[ProducesResponseType(StatusCodes.Status404NotFound)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //[SwaggerOperation(
+        //    "Returns a collection of a work item's attachments.",
+        //    Tags = new[] { "3. Work Item Attachments" },
+        //    OperationId = "GetManyWorkItemAttachments")]
+        //public async Task<ActionResult> Post([FromBody] CreateWorkItemCommand command)
+        //{
+        //    return CreatedAtAction("", new { }, null);
+        //}
 
         [HttpGet("request")]
         public async Task<ActionResult> Get()
@@ -39,10 +39,5 @@ namespace Api
             return Ok("hi");
         }
 
-        [HttpGet()]
-        public string TestGet()
-        {
-            return "hi";
-        }
     }
 }
